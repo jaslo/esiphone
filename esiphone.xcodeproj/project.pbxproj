@@ -1,0 +1,1074 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80CA4D372F7767A30008D711 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CA4D362F7767A30008D711 /* WidgetKit.framework */; };
+		80CA4D392F7767A30008D711 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CA4D382F7767A30008D711 /* SwiftUI.framework */; };
+		80CA4D6F2F77692D0008D711 /* esiwatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 80CA4D4F2F77692B0008D711 /* esiwatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		80CA4D812F7769FE0008D711 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CA4D362F7767A30008D711 /* WidgetKit.framework */; };
+		80CA4D822F7769FE0008D711 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CA4D382F7767A30008D711 /* SwiftUI.framework */; };
+		80CA4D932F776A000008D711 /* esiWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 80CA4D802F7769FE0008D711 /* esiWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		80CA4DA42F7799B80008D711 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CA4DA32F7799B80008D711 /* UIKit.framework */; };
+		80CA4DAF2F77B2200008D711 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CA4D362F7767A30008D711 /* WidgetKit.framework */; };
+		80CA4DB02F77B2200008D711 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80CA4D382F7767A30008D711 /* SwiftUI.framework */; };
+		80CA4DBD2F77B2220008D711 /* esiWatchWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 80CA4DAE2F77B2200008D711 /* esiWatchWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80CA4D6D2F77692D0008D711 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80CA4CD82F77631A0008D711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CA4D4E2F77692B0008D711;
+			remoteInfo = "esiwatch Watch App";
+		};
+		80CA4D912F776A000008D711 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80CA4CD82F77631A0008D711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CA4D7F2F7769FE0008D711;
+			remoteInfo = esiWidgetExtension;
+		};
+		80CA4DBB2F77B2220008D711 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80CA4CD82F77631A0008D711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80CA4DAD2F77B2200008D711;
+			remoteInfo = esiWatchWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		80CA4D732F77692D0008D711 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				80CA4D6F2F77692D0008D711 /* esiwatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4D982F776A000008D711 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				80CA4D932F776A000008D711 /* esiWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4DC22F77B2220008D711 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				80CA4DBD2F77B2220008D711 /* esiWatchWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		80CA4CE02F77631A0008D711 /* esiphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = esiphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CA4D342F7767A30008D711 /* esiwatchExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = esiwatchExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CA4D362F7767A30008D711 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		80CA4D382F7767A30008D711 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		80CA4D4F2F77692B0008D711 /* esiwatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "esiwatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CA4D802F7769FE0008D711 /* esiWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = esiWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CA4D9D2F7770430008D711 /* esiwatchExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = esiwatchExtension.entitlements; sourceTree = "<group>"; };
+		80CA4D9E2F7770700008D711 /* esiWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = esiWidgetExtension.entitlements; sourceTree = "<group>"; };
+		80CA4DA32F7799B80008D711 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS26.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		80CA4DAE2F77B2200008D711 /* esiWatchWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = esiWatchWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		80CA4DC32F77B2550008D711 /* esiWatchWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = esiWatchWidgetExtension.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		80CA4D972F776A000008D711 /* Exceptions for "esiWidget" folder in "esiWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 80CA4D7F2F7769FE0008D711 /* esiWidgetExtension */;
+		};
+		80CA4DA12F777F5B0008D711 /* Exceptions for "esiphone" folder in "esiwatch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SharedModels.swift,
+			);
+			target = 80CA4D4E2F77692B0008D711 /* esiwatch Watch App */;
+		};
+		80CA4DA22F777F5B0008D711 /* Exceptions for "esiphone" folder in "esiWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SharedModels.swift,
+			);
+			target = 80CA4D7F2F7769FE0008D711 /* esiWidgetExtension */;
+		};
+		80CA4DA82F779E210008D711 /* Exceptions for "esiphone" folder in "esiphone" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 80CA4CDF2F77631A0008D711 /* esiphone */;
+		};
+		80CA4DC12F77B2220008D711 /* Exceptions for "esiWatchWidget" folder in "esiWatchWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 80CA4DAD2F77B2200008D711 /* esiWatchWidgetExtension */;
+		};
+		80CA4DC52F77B2770008D711 /* Exceptions for "esiphone" folder in "esiwatchExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SharedModels.swift,
+			);
+			target = 80CA4D332F7767A30008D711 /* esiwatchExtension */;
+		};
+		80CA4DCD2F77B6530008D711 /* Exceptions for "esiphone" folder in "esiWatchWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SharedModels.swift,
+			);
+			target = 80CA4DAD2F77B2200008D711 /* esiWatchWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		80CA4CE22F77631B0008D711 /* esiphone */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				80CA4DA82F779E210008D711 /* Exceptions for "esiphone" folder in "esiphone" target */,
+				80CA4DC52F77B2770008D711 /* Exceptions for "esiphone" folder in "esiwatchExtension" target */,
+				80CA4DA12F777F5B0008D711 /* Exceptions for "esiphone" folder in "esiwatch Watch App" target */,
+				80CA4DA22F777F5B0008D711 /* Exceptions for "esiphone" folder in "esiWidgetExtension" target */,
+				80CA4DCD2F77B6530008D711 /* Exceptions for "esiphone" folder in "esiWatchWidgetExtension" target */,
+			);
+			path = esiphone;
+			sourceTree = "<group>";
+		};
+		80CA4D502F77692B0008D711 /* esiwatch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "esiwatch Watch App";
+			sourceTree = "<group>";
+		};
+		80CA4D832F7769FE0008D711 /* esiWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				80CA4D972F776A000008D711 /* Exceptions for "esiWidget" folder in "esiWidgetExtension" target */,
+			);
+			path = esiWidget;
+			sourceTree = "<group>";
+		};
+		80CA4DB12F77B2200008D711 /* esiWatchWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				80CA4DC12F77B2220008D711 /* Exceptions for "esiWatchWidget" folder in "esiWatchWidgetExtension" target */,
+			);
+			path = esiWatchWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80CA4CDD2F77631A0008D711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4D312F7767A30008D711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CA4D392F7767A30008D711 /* SwiftUI.framework in Frameworks */,
+				80CA4D372F7767A30008D711 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4D4C2F77692B0008D711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CA4DA42F7799B80008D711 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4D7D2F7769FE0008D711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CA4D822F7769FE0008D711 /* SwiftUI.framework in Frameworks */,
+				80CA4D812F7769FE0008D711 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4DAB2F77B2200008D711 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80CA4DB02F77B2200008D711 /* SwiftUI.framework in Frameworks */,
+				80CA4DAF2F77B2200008D711 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		80CA4CD72F77631A0008D711 = {
+			isa = PBXGroup;
+			children = (
+				80CA4DC32F77B2550008D711 /* esiWatchWidgetExtension.entitlements */,
+				80CA4D9E2F7770700008D711 /* esiWidgetExtension.entitlements */,
+				80CA4D9D2F7770430008D711 /* esiwatchExtension.entitlements */,
+				80CA4CE22F77631B0008D711 /* esiphone */,
+				80CA4D502F77692B0008D711 /* esiwatch Watch App */,
+				80CA4D832F7769FE0008D711 /* esiWidget */,
+				80CA4DB12F77B2200008D711 /* esiWatchWidget */,
+				80CA4D352F7767A30008D711 /* Frameworks */,
+				80CA4CE12F77631A0008D711 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		80CA4CE12F77631A0008D711 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80CA4CE02F77631A0008D711 /* esiphone.app */,
+				80CA4D342F7767A30008D711 /* esiwatchExtension.appex */,
+				80CA4D4F2F77692B0008D711 /* esiwatch Watch App.app */,
+				80CA4D802F7769FE0008D711 /* esiWidgetExtension.appex */,
+				80CA4DAE2F77B2200008D711 /* esiWatchWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80CA4D352F7767A30008D711 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				80CA4DA32F7799B80008D711 /* UIKit.framework */,
+				80CA4D362F7767A30008D711 /* WidgetKit.framework */,
+				80CA4D382F7767A30008D711 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80CA4CDF2F77631A0008D711 /* esiphone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CA4D032F77631D0008D711 /* Build configuration list for PBXNativeTarget "esiphone" */;
+			buildPhases = (
+				80CA4CDC2F77631A0008D711 /* Sources */,
+				80CA4CDD2F77631A0008D711 /* Frameworks */,
+				80CA4CDE2F77631A0008D711 /* Resources */,
+				80CA4D732F77692D0008D711 /* Embed Watch Content */,
+				80CA4D982F776A000008D711 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80CA4D6E2F77692D0008D711 /* PBXTargetDependency */,
+				80CA4D922F776A000008D711 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				80CA4CE22F77631B0008D711 /* esiphone */,
+			);
+			name = esiphone;
+			packageProductDependencies = (
+			);
+			productName = esiphone;
+			productReference = 80CA4CE02F77631A0008D711 /* esiphone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80CA4D332F7767A30008D711 /* esiwatchExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CA4D492F7767A50008D711 /* Build configuration list for PBXNativeTarget "esiwatchExtension" */;
+			buildPhases = (
+				80CA4D302F7767A30008D711 /* Sources */,
+				80CA4D312F7767A30008D711 /* Frameworks */,
+				80CA4D322F7767A30008D711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = esiwatchExtension;
+			packageProductDependencies = (
+			);
+			productName = esiwatchExtension;
+			productReference = 80CA4D342F7767A30008D711 /* esiwatchExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		80CA4D4E2F77692B0008D711 /* esiwatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CA4D702F77692D0008D711 /* Build configuration list for PBXNativeTarget "esiwatch Watch App" */;
+			buildPhases = (
+				80CA4D4B2F77692B0008D711 /* Sources */,
+				80CA4D4C2F77692B0008D711 /* Frameworks */,
+				80CA4D4D2F77692B0008D711 /* Resources */,
+				80CA4DC22F77B2220008D711 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80CA4DBC2F77B2220008D711 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				80CA4D502F77692B0008D711 /* esiwatch Watch App */,
+			);
+			name = "esiwatch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "esiwatch Watch App";
+			productReference = 80CA4D4F2F77692B0008D711 /* esiwatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80CA4D7F2F7769FE0008D711 /* esiWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CA4D942F776A000008D711 /* Build configuration list for PBXNativeTarget "esiWidgetExtension" */;
+			buildPhases = (
+				80CA4D7C2F7769FE0008D711 /* Sources */,
+				80CA4D7D2F7769FE0008D711 /* Frameworks */,
+				80CA4D7E2F7769FE0008D711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				80CA4D832F7769FE0008D711 /* esiWidget */,
+			);
+			name = esiWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = esiWidgetExtension;
+			productReference = 80CA4D802F7769FE0008D711 /* esiWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		80CA4DAD2F77B2200008D711 /* esiWatchWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80CA4DBE2F77B2220008D711 /* Build configuration list for PBXNativeTarget "esiWatchWidgetExtension" */;
+			buildPhases = (
+				80CA4DAA2F77B2200008D711 /* Sources */,
+				80CA4DAB2F77B2200008D711 /* Frameworks */,
+				80CA4DAC2F77B2200008D711 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				80CA4DB12F77B2200008D711 /* esiWatchWidget */,
+			);
+			name = esiWatchWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = esiWatchWidgetExtension;
+			productReference = 80CA4DAE2F77B2200008D711 /* esiWatchWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80CA4CD82F77631A0008D711 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					80CA4CDF2F77631A0008D711 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					80CA4D332F7767A30008D711 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					80CA4D4E2F77692B0008D711 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					80CA4D7F2F7769FE0008D711 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					80CA4DAD2F77B2200008D711 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+				};
+			};
+			buildConfigurationList = 80CA4CDB2F77631A0008D711 /* Build configuration list for PBXProject "esiphone" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80CA4CD72F77631A0008D711;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 80CA4CE12F77631A0008D711 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80CA4CDF2F77631A0008D711 /* esiphone */,
+				80CA4D332F7767A30008D711 /* esiwatchExtension */,
+				80CA4D4E2F77692B0008D711 /* esiwatch Watch App */,
+				80CA4D7F2F7769FE0008D711 /* esiWidgetExtension */,
+				80CA4DAD2F77B2200008D711 /* esiWatchWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80CA4CDE2F77631A0008D711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4D322F7767A30008D711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4D4D2F77692B0008D711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4D7E2F7769FE0008D711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4DAC2F77B2200008D711 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80CA4CDC2F77631A0008D711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4D302F7767A30008D711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4D4B2F77692B0008D711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4D7C2F7769FE0008D711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80CA4DAA2F77B2200008D711 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80CA4D6E2F77692D0008D711 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CA4D4E2F77692B0008D711 /* esiwatch Watch App */;
+			targetProxy = 80CA4D6D2F77692D0008D711 /* PBXContainerItemProxy */;
+		};
+		80CA4D922F776A000008D711 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CA4D7F2F7769FE0008D711 /* esiWidgetExtension */;
+			targetProxy = 80CA4D912F776A000008D711 /* PBXContainerItemProxy */;
+		};
+		80CA4DBC2F77B2220008D711 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80CA4DAD2F77B2200008D711 /* esiWatchWidgetExtension */;
+			targetProxy = 80CA4DBB2F77B2220008D711 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		80CA4D012F77631D0008D711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80CA4D022F77631D0008D711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		80CA4D042F77631D0008D711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = esiphone/esiphone.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = esiphone/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vtable.esiphone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		80CA4D052F77631D0008D711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = esiphone/esiphone.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = esiphone/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vtable.esiphone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		80CA4D462F7767A50008D711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = esiwatchExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = esiwatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = esiwatch;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vtable.esiwatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		80CA4D472F7767A50008D711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = esiwatchExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = esiwatch/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = esiwatch;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vtable.esiwatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		80CA4D712F77692D0008D711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "esiwatch Watch App/esiwatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = esiwatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.vtable.esiphone;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vtable.esiphone.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		80CA4D722F77692D0008D711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "esiwatch Watch App/esiwatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = esiwatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.vtable.esiphone;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vtable.esiphone.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+		80CA4D952F776A000008D711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = esiWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = esiWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = esiWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vtable.esiphone.esiWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80CA4D962F776A000008D711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = esiWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = esiWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = esiWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vtable.esiphone.esiWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80CA4DBF2F77B2220008D711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = esiWatchWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = esiWatchWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = esiWatchWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vtable.esiphone.watchkitapp.esiWatchWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Debug;
+		};
+		80CA4DC02F77B2220008D711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = esiWatchWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M6BY89LVGP;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = esiWatchWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = esiWatchWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vtable.esiphone.watchkitapp.esiWatchWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80CA4CDB2F77631A0008D711 /* Build configuration list for PBXProject "esiphone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CA4D012F77631D0008D711 /* Debug */,
+				80CA4D022F77631D0008D711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CA4D032F77631D0008D711 /* Build configuration list for PBXNativeTarget "esiphone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CA4D042F77631D0008D711 /* Debug */,
+				80CA4D052F77631D0008D711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CA4D492F7767A50008D711 /* Build configuration list for PBXNativeTarget "esiwatchExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CA4D462F7767A50008D711 /* Debug */,
+				80CA4D472F7767A50008D711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CA4D702F77692D0008D711 /* Build configuration list for PBXNativeTarget "esiwatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CA4D712F77692D0008D711 /* Debug */,
+				80CA4D722F77692D0008D711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CA4D942F776A000008D711 /* Build configuration list for PBXNativeTarget "esiWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CA4D952F776A000008D711 /* Debug */,
+				80CA4D962F776A000008D711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80CA4DBE2F77B2220008D711 /* Build configuration list for PBXNativeTarget "esiWatchWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80CA4DBF2F77B2220008D711 /* Debug */,
+				80CA4DC02F77B2220008D711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80CA4CD82F77631A0008D711 /* Project object */;
+}
