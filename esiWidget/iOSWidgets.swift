@@ -81,12 +81,13 @@ struct LockRectangularView: View {
                 .font(.system(size: 20, weight: .bold, design: .rounded))
                 .minimumScaleFactor(0.6)
                 .lineLimit(1)
-            Text("Updated \(entry.data.ageDescription)")
+            Text(entry.data.lastUpdated, style: .relative)
                 .font(.caption2)
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+        .containerBackground(.fill.tertiary, for: .widget)
     }
 }
 
@@ -106,7 +107,7 @@ struct StandbySmallView: View {
     }
 
     var body: some View {
-        VStack(spacing: 6) {
+        VStack(alignment: .center, spacing: 6) {
             HStack(spacing: 4) {
                 Image(systemName: "waveform.path.ecg")
                     .font(.caption2)
@@ -120,10 +121,12 @@ struct StandbySmallView: View {
                 .foregroundStyle(trendColor)
                 .minimumScaleFactor(0.5)
                 .lineLimit(1)
-            Text(entry.data.ageDescription)
-                .font(.caption2)
-                .foregroundStyle(.tertiary)
+            Text(entry.data.lastUpdated, style: .relative)
+                .font(.system(size: 10, weight: .bold, design: .rounded))
+                .multilineTextAlignment(.center)
         }
+        .frame(maxWidth: .infinity, alignment: .center)
+        .containerBackground(for: .widget) { Color.black.opacity(0.85) }
     }
 }
 
