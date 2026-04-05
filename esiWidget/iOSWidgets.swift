@@ -30,7 +30,6 @@ struct EversenseProvider: TimelineProvider {
         var entries: [EversenseEntry] = []
         for minute in 0..<5 {
             let entryDate = now.addingTimeInterval(Double(minute) * 60)
-            print("📅 Entry \(minute): \(entryDate)")
             entries.append(EversenseEntry(date: entryDate, data: data))
         }
         

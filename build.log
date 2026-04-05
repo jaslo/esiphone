@@ -1,0 +1,6 @@
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:watchOS, arch:arm64, id:00008310-0003198E0240E01E, name:Jason’s Apple Watch }
+{ platform:watchOS, arch:arm64_32, id:00008310-0003198E0240E01E, name:Jason’s Apple Watch }
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:watchOS, arch:arm64, id:00008310-0003198E0240E01E, name:Jason’s Apple Watch }
+{ platform:watchOS, arch:arm64_32, id:00008310-0003198E0240E01E, name:Jason’s Apple Watch }

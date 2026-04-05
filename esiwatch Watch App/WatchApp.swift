@@ -1,12 +1,7 @@
-// WatchApp.swift  (Watch App target ONLY — do NOT tick Watch Widget Extension)
+// WatchApp.swift  (Watch App target ONLY)
 
 import SwiftUI
-import WidgetKit
 import WatchConnectivity
-
-// ---------------------------------------------------------------------------
-// MARK: - Watch app entry point
-// ---------------------------------------------------------------------------
 
 @main
 struct WatchApp: App {
@@ -25,10 +20,6 @@ class WatchAppDelegate: NSObject, WKApplicationDelegate {
     }
 }
 
-// ---------------------------------------------------------------------------
-// MARK: - WatchConnectivity session receiver
-// ---------------------------------------------------------------------------
-
 final class WatchSessionManager: NSObject, WCSessionDelegate {
     static let shared = WatchSessionManager()
 
@@ -41,16 +32,10 @@ final class WatchSessionManager: NSObject, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveApplicationContext context: [String: Any]) {
         guard let data = ComplicationData.fromContext(context) else { return }
         data.save()
-        // Tell the widget extension to reload its timeline with the new value.
-        WidgetCenter.shared.reloadTimelines(ofKind: "ESiWatchComplication")
     }
 
     func session(_ session: WCSession, activationDidCompleteWith state: WCSessionActivationState, error: Error?) {}
 }
-
-// ---------------------------------------------------------------------------
-// MARK: - Watch companion app UI
-// ---------------------------------------------------------------------------
 
 struct WatchContentView: View {
     @State private var data = ComplicationData.load()
@@ -68,3 +53,4 @@ struct WatchContentView: View {
         }
     }
 }
+

@@ -63,6 +63,10 @@ struct ContentView: View {
                 }
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: .eversenseDataUpdated)) { _ in
+            data = ComplicationData.load()
+        }
+
     }
 
     private func refresh() async {

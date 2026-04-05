@@ -1,17 +1,16 @@
 // PhoneSupport.swift  (iPhone target)
-// Eversense CGM client + WatchConnectivity sender.
-//
-// FIRST-RUN SETUP:
-//   Credentials are stored in the Keychain, never in code.
-//   On first launch, present CredentialsView (bottom of this file) to
-//   collect username/password, then call EversenseKeychain.save(...).
 
 import Foundation
 import WatchConnectivity
 import Security
 import SwiftUI
-import CryptoKit
 import WidgetKit
+import CryptoKit
+
+
+extension Notification.Name {
+    static let eversenseDataUpdated = Notification.Name("eversenseDataUpdated")
+}
 
 // ---------------------------------------------------------------------------
 // MARK: - Keychain helper
@@ -33,7 +32,6 @@ enum EversenseKeychain {
         return (username, password)
     }
 
-    // Nightscout + push service settings
     static func saveSettings(nsURL: String, nsSecret: String, pushURL: String) {
         set(nsURL,    key: "nsURL")
         set(nsSecret, key: "nsSecret")
@@ -63,7 +61,6 @@ enum EversenseKeychain {
             kSecAttrService as String:    service,
             kSecAttrAccount as String:    key,
             kSecValueData as String:      data,
-            // afterFirstUnlock so background fetch can read it while phone is locked.
             kSecAttrAccessible as String: kSecAttrAccessibleAfterFirstUnlock
         ]
         SecItemDelete(query as CFDictionary)
@@ -109,15 +106,14 @@ enum GlucoseTrend: Int {
     case fallingRapid = 6
     case risingRapid  = 7
 
-    /// Arrow glyph shown on the complication alongside the glucose value.
     var arrow: String {
         switch self {
-        case .stale:                    return "?"
+        case .stale:                      return "?"
         case .fallingRapid, .fallingFast: return "↓↓"
-        case .falling:                  return "↓"
-        case .flat:                     return "→"
-        case .rising:                   return "↑"
-        case .risingFast, .risingRapid: return "↑↑"
+        case .falling:                    return "↓"
+        case .flat:                       return "→"
+        case .rising:                     return "↑"
+        case .risingFast, .risingRapid:   return "↑↑"
         }
     }
 }
@@ -133,7 +129,6 @@ actor EversenseClient {
         static let userDetails = URL(string: "https://usapialpha.eversensedms.com/api/care/GetFollowingPatientList")!
     }
 
-    // Public client credential from the Eversense Android app (not your personal secret).
     private enum ClientCredentials {
         static let id     = "eversenseMMAAndroid"
         static let secret = "6ksPx#]~wQ3U"
@@ -148,8 +143,6 @@ actor EversenseClient {
         self.username = username
         self.password = password
     }
-
-    // MARK: - Login  (mirrors Python login())
 
     private func login() async throws {
         var request = URLRequest(url: Endpoint.login, timeoutInterval: 15)
@@ -178,9 +171,8 @@ actor EversenseClient {
             let expires_in: Int?
         }
         let token = try JSONDecoder().decode(TokenResponse.self, from: data)
-        accessToken  = token.access_token
-        // Subtract 60 s as a safety buffer, matching the Python client.
-        tokenExpiry  = Date().addingTimeInterval(Double(token.expires_in ?? 43200) - 60)
+        accessToken = token.access_token
+        tokenExpiry = Date().addingTimeInterval(Double(token.expires_in ?? 43200) - 60)
     }
 
     private func ensureTokenValid() async throws {
@@ -189,9 +181,6 @@ actor EversenseClient {
         }
     }
 
-    // MARK: - Fetch current glucose  (mirrors Python fetch_user_id() / fetch_current())
-
-    /// Returns a short display string such as "118 ↑" ready for the complication.
     func fetchDisplayText() async throws -> String {
         try await ensureTokenValid()
         guard let token = accessToken else { throw EversenseError.notAuthenticated }
@@ -201,13 +190,10 @@ actor EversenseClient {
 
         let (data, response) = try await URLSession.shared.data(for: request)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-            // Token may have been invalidated server-side — clear it so next
-            // call re-authenticates (mirrors ensure_token_valid in Python).
             accessToken = nil
             throw EversenseError.requestFailed("HTTP \((response as? HTTPURLResponse)?.statusCode ?? 0)")
         }
 
-        // Mirrors the Python state dict: CurrentGlucose, GlucoseTrend, IsTransmitterConnected
         struct PatientEntry: Decodable {
             let CurrentGlucose: Int?
             let GlucoseTrend: Int?
@@ -216,13 +202,11 @@ actor EversenseClient {
         let entries = try JSONDecoder().decode([PatientEntry].self, from: data)
         guard let first = entries.first else { throw EversenseError.noData }
 
-        guard first.IsTransmitterConnected == true else {
-            return "No signal"
-        }
+        guard first.IsTransmitterConnected == true else { return "No signal" }
 
         let glucose = first.CurrentGlucose ?? 0
         let trend   = GlucoseTrend(rawValue: first.GlucoseTrend ?? 0) ?? .stale
-        return "\(glucose) \(trend.arrow)"   // e.g. "118 ↑"
+        return "\(glucose) \(trend.arrow)"
     }
 }
 
@@ -245,12 +229,10 @@ enum EversenseError: LocalizedError {
 }
 
 // ---------------------------------------------------------------------------
-// MARK: - APIClient  (called by iPhoneApp.swift background fetch)
+// MARK: - APIClient
 // ---------------------------------------------------------------------------
 
 enum APIClient {
-    /// Called by the BGTask handler. Reads credentials from Keychain,
-    /// fetches current glucose, returns a ComplicationData for the watch.
     static func fetchData() async throws -> ComplicationData {
         guard let creds = EversenseKeychain.load() else {
             throw EversenseError.notAuthenticated
@@ -259,6 +241,7 @@ enum APIClient {
         let text   = try await client.fetchDisplayText()
         return ComplicationData(displayText: text, lastUpdated: Date())
     }
+
     static func fetchAndSync() async {
         do {
             let data = try await fetchData()
@@ -270,11 +253,10 @@ enum APIClient {
             print("Fetch failed: \(error)")
         }
     }
-
 }
 
 // ---------------------------------------------------------------------------
-// MARK: - Phone → Watch session manager  (unchanged)
+// MARK: - Phone → Watch session manager
 // ---------------------------------------------------------------------------
 
 final class PhoneSessionManager: NSObject, WCSessionDelegate {
@@ -304,77 +286,10 @@ final class PhoneSessionManager: NSObject, WCSessionDelegate {
 }
 
 // ---------------------------------------------------------------------------
-// MARK: - CredentialsView
-// Present this as a .sheet whenever EversenseKeychain.load() returns nil.
-// ---------------------------------------------------------------------------
-
-struct CredentialsView: View {
-    @State private var username = ""
-    @State private var password = ""
-    @State private var isLoading = false
-    @State private var errorMessage: String?
-    var onSuccess: () -> Void
-
-    var body: some View {
-        NavigationStack {
-            Form {
-                Section("Eversense account") {
-                    TextField("Email", text: $username)
-                        .textContentType(.emailAddress)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                    SecureField("Password", text: $password)
-                        .textContentType(.password)
-                }
-                if let err = errorMessage {
-                    Section {
-                        Text(err)
-                            .foregroundStyle(.red)
-                            .font(.caption)
-                    }
-                }
-                Section {
-                    Button {
-                        Task { await signIn() }
-                    } label: {
-                        if isLoading {
-                            ProgressView()
-                                .frame(maxWidth: .infinity)
-                        } else {
-                            Text("Sign in")
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
-                    .disabled(username.isEmpty || password.isEmpty || isLoading)
-                }
-            }
-            .navigationTitle("Connect Eversense")
-        }
-    }
-
-    private func signIn() async {
-        isLoading = true
-        errorMessage = nil
-        do {
-            // Validate the credentials with a real network call before saving.
-            let client = EversenseClient(username: username, password: password)
-            _ = try await client.fetchDisplayText()
-            EversenseKeychain.save(username: username, password: password)
-            onSuccess()
-        } catch {
-            errorMessage = error.localizedDescription
-        }
-        isLoading = false
-    }
-}
-
-// ---------------------------------------------------------------------------
 // MARK: - Nightscout SGV uploader
 // ---------------------------------------------------------------------------
 
 enum NightscoutClient {
-    /// Reads NS credentials from the shared App Group UserDefaults.
-    /// Set these in the app's settings screen (NightscoutSettingsView below).
     static func upload(_ data: ComplicationData) async {
         let settings = EversenseKeychain.loadSettings()
         guard
@@ -385,38 +300,34 @@ enum NightscoutClient {
             print("Nightscout not configured, skipping upload")
             return
         }
-        let urlString = settings.nsURL
-        let secret    = settings.nsSecret
 
-        // Parse glucose value and trend arrow out of displayText e.g. "118 ↑"
-        let parts   = data.displayText.split(separator: " ")
+        let parts     = data.displayText.split(separator: " ")
         guard let sgv = Int(parts.first ?? "") else { return }
         let direction = trendDirection(from: parts.last.map(String.init) ?? "")
 
         let entry: [String: Any] = [
-            "type":      "sgv",
-            "sgv":       sgv,
-            "date":      Int(data.lastUpdated.timeIntervalSince1970 * 1000),
+            "type":       "sgv",
+            "sgv":        sgv,
+            "date":       Int(data.lastUpdated.timeIntervalSince1970 * 1000),
             "dateString": ISO8601DateFormatter().string(from: data.lastUpdated),
-            "direction": direction,
-            "device":    "ESiPhone"
+            "direction":  direction,
+            "device":     "ESiPhone"
         ]
 
         var request = URLRequest(url: url, timeoutInterval: 15)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        // Nightscout accepts either plain secret or SHA1 hash.
-        let hash = secret.data(using: .utf8)
+
+        let hash = settings.nsSecret.data(using: .utf8)
             .map { Insecure.SHA1.hash(data: $0).map { String(format: "%02x", $0) }.joined() }
-            ?? secret
-        
+            ?? settings.nsSecret
         request.setValue(hash, forHTTPHeaderField: "api-secret")
 
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: [entry])
             let (_, response) = try await URLSession.shared.data(for: request)
             if let http = response as? HTTPURLResponse {
-                print(http.statusCode == 200 ? "✅ Nightscout upload OK" : "❌ Nightscout HTTP \(http.statusCode)")
+                if http.statusCode != 200 { print("Nightscout upload failed: HTTP \(http.statusCode)") }
             }
         } catch {
             print("Nightscout upload error: \(error)")
@@ -440,8 +351,6 @@ enum NightscoutClient {
 // ---------------------------------------------------------------------------
 
 enum PushRegistration {
-    /// URL of your Railway push service — store in App Group UserDefaults
-    /// so it can be set from the settings screen.
     static func register(token: String) async {
         let settings = EversenseKeychain.loadSettings()
         guard
@@ -460,7 +369,7 @@ enum PushRegistration {
         do {
             let (_, response) = try await URLSession.shared.data(for: request)
             if let http = response as? HTTPURLResponse {
-                print(http.statusCode == 200 ? "✅ Push token registered" : "❌ Push registration HTTP \(http.statusCode)")
+                if http.statusCode != 200 { print("Push registration failed: HTTP \(http.statusCode)") }
             }
         } catch {
             print("Push registration error: \(error)")
@@ -480,13 +389,14 @@ enum PushRegistration {
 
         do {
             let (_, response) = try await URLSession.shared.data(for: request)
-            if let http = response as? HTTPURLResponse {
-                print(http.statusCode == 200 ? "✅ Old token unregistered" : "❌ Unregister HTTP \(http.statusCode)")
+            if let http = response as? HTTPURLResponse, http.statusCode != 200 {
+                print("Unregister failed: HTTP \(http.statusCode)")
             }
         } catch {
             print("Unregister error: \(error)")
         }
     }
+    
 }
 
 // ---------------------------------------------------------------------------
@@ -498,8 +408,6 @@ struct NightscoutSettingsView: View {
     @State private var nsSecret = ""
     @State private var pushURL  = ""
     @State private var saved    = false
-
-    private var defaults: UserDefaults? { UserDefaults(suiteName: SharedKeys.appGroupID) }
 
     var body: some View {
         Form {
@@ -545,3 +453,65 @@ struct NightscoutSettingsView: View {
         }
     }
 }
+
+// ---------------------------------------------------------------------------
+// MARK: - Credentials view
+// ---------------------------------------------------------------------------
+
+struct CredentialsView: View {
+    @State private var username = ""
+    @State private var password = ""
+    @State private var isLoading = false
+    @State private var errorMessage: String?
+    var onSuccess: () -> Void
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section("Eversense account") {
+                    TextField("Email", text: $username)
+                        .textContentType(.emailAddress)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                    SecureField("Password", text: $password)
+                        .textContentType(.password)
+                }
+                if let err = errorMessage {
+                    Section {
+                        Text(err)
+                            .foregroundStyle(.red)
+                            .font(.caption)
+                    }
+                }
+                Section {
+                    Button {
+                        Task { await signIn() }
+                    } label: {
+                        if isLoading {
+                            ProgressView().frame(maxWidth: .infinity)
+                        } else {
+                            Text("Sign in").frame(maxWidth: .infinity)
+                        }
+                    }
+                    .disabled(username.isEmpty || password.isEmpty || isLoading)
+                }
+            }
+            .navigationTitle("Connect Eversense")
+        }
+    }
+
+    private func signIn() async {
+        isLoading = true
+        errorMessage = nil
+        do {
+            let client = EversenseClient(username: username, password: password)
+            _ = try await client.fetchDisplayText()
+            EversenseKeychain.save(username: username, password: password)
+            onSuccess()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+        isLoading = false
+    }
+}
+

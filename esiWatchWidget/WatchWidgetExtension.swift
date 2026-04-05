@@ -1,11 +1,7 @@
-// WatchWidgetExtension.swift  (Watch Widget Extension target ONLY — do NOT tick Watch App)
+// WatchWidgetExtension.swift  (Watch Widget Extension target ONLY)
 
 import SwiftUI
 import WidgetKit
-
-// ---------------------------------------------------------------------------
-// MARK: - Timeline entry & provider
-// ---------------------------------------------------------------------------
 
 struct ComplicationEntry: TimelineEntry {
     let date: Date
@@ -16,7 +12,7 @@ struct ComplicationProvider: TimelineProvider {
     func placeholder(in context: Context) -> ComplicationEntry {
         ComplicationEntry(date: Date(), data: ComplicationData(displayText: "118 ↑", lastUpdated: Date()))
     }
-    
+
     func getSnapshot(in context: Context, completion: @escaping (ComplicationEntry) -> Void) {
         completion(ComplicationEntry(date: Date(), data: ComplicationData.load()))
     }
@@ -24,23 +20,15 @@ struct ComplicationProvider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<ComplicationEntry>) -> Void) {
         let data = ComplicationData.load()
         let now  = Date()
-        
-        // Generate one entry per minute for the next 10 minutes
-        // so the ring animates smoothly between pushes
         var entries: [ComplicationEntry] = []
-        for minute in 0..<10 {
+        for minute in 0..<5 {
             let entryDate = now.addingTimeInterval(Double(minute) * 60)
             entries.append(ComplicationEntry(date: entryDate, data: data))
         }
-        
-        let timeline = Timeline(entries: entries, policy: .never)
+        let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }
-
-// ---------------------------------------------------------------------------
-// MARK: - Complication view
-// ---------------------------------------------------------------------------
 
 struct CircularComplicationView: View {
     let entry: ComplicationEntry
@@ -60,15 +48,11 @@ struct CircularComplicationView: View {
         }
         .containerBackground(.fill.tertiary, for: .widget)
         .widgetLabel {
-            Text(entry.data.ageDescription)
+            Text(entry.data.lastUpdated, style: .relative)
                 .foregroundStyle(.secondary)
         }
     }
 }
-
-// ---------------------------------------------------------------------------
-// MARK: - Widget & bundle
-// ---------------------------------------------------------------------------
 
 struct ESiWatchComplication: Widget {
     let kind = "ESiWatchComplication"
@@ -89,3 +73,4 @@ struct ESiWatchComplicationBundle: WidgetBundle {
         ESiWatchComplication()
     }
 }
+

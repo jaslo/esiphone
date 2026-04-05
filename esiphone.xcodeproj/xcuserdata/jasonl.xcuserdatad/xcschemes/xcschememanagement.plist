@@ -22,12 +22,17 @@
 		<key>esiwatch Watch App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
+		</dict>
+		<key>esiwatch new.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>esiwatchExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -43,6 +48,16 @@
 			<true/>
 		</dict>
 		<key>80CA4CF82F77631D0008D711</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>80CA4D4E2F77692B0008D711</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>80CA4DAD2F77B2200008D711</key>
 		<dict>
 			<key>primary</key>
 			<true/>
